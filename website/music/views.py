@@ -2,7 +2,7 @@ from django.views import generic
 from .models import Album
 
 class IndexView(generic.ListView):
-	template_name = 'music/index.html'
+	#template_name = 'music/index.html'
 	context_object_name = 'all_album'
 
 	def get_queryset(self):
@@ -10,5 +10,5 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
 	model = Album
-	template_name = 'music/details.html'
+	#template_name = 'music/details.html'
 
