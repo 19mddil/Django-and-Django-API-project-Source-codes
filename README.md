@@ -84,10 +84,16 @@ from django.apps import AppConfig
 class PagesConfig(AppConfig):
     name = 'pages'
 ```
-## Notes
+### Notes
 - Even though  new app pages exists within the Django project, Django doesn’t “know” about it until we explicitly add it in settings.py file and scroll down to INSTALLED_APPS where it is seen six built-in Django apps already there and new pages app need to be added at the bottom.
 - Local apps should always be added at the bottom because Django executes the INSTALLED_APPS setting from top to bottom. Therefore the internal admin app is loaded first, then auth, and so on and because We want the core Django apps to be available since it’s quite likely our own apps will rely on their functionality.
 - why pages.apps.PagesConfig ? The reason is that Django creates an apps.py file with each new app and it’s possible to add additional information there, especially with the Signals framework which is an advanced technique.
+
+## URLs, Views, Models, Templates
+Within an app at least three (often four) separate files are required to power one single page.
+The complete flow looks something like this:
+### Django request/response cycle
+`URL -> View -> Model (typically) -> Template`
 
 ## Introducing the Django Admin
 ### Philosophy 
