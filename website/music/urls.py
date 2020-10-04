@@ -10,5 +10,7 @@ urlpatterns = [
 	# /music/71/
 	path('<slug:pk>/',views.DetailView.as_view(),name='detail'),
 
+	path('album/add/',views.AlbumCreate.as_view(),name='album-add'),
+
 
 ]
