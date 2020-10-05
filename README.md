@@ -99,6 +99,12 @@ The complete flow looks something like this:
 ### Philosophy
 Every web framework needs a convenient way to generate HTML files.  
 In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )
+## Heroku (Production publish)
+The following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
+- update Pipfile.lock
+- make a new Procfile file
+- install Gunicorn as our web server
+- make a one-line change to settings.py file
 
 ## Introducing the Django Admin
 ### Philosophy 
