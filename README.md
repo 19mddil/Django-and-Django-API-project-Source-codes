@@ -95,6 +95,11 @@ The complete flow looks something like this:
 ### Django request/response cycle
 `URL -> View -> Model (typically) -> Template`
 
+## Templates
+### Philosophy
+Every web framework needs a convenient way to generate HTML files.  
+In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )
+
 ## Introducing the Django Admin
 ### Philosophy 
 Generating admin sites for your staff or clients to add, change, and delete content is tedious work that doesn’t require much creativity. For that reason, Django entirely automates creation of admin interfaces for models. 
