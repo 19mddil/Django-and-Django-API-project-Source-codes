@@ -108,13 +108,12 @@ Heroku works with the help of locat git repository. So Each project should have 
 Then the following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
 - update Pipfile.lock
     - to update the Pipfile.lock two process must be followed
-        - Withinexisting Pipfile specify the version of Python being used, which is 3.7 . So,add these two lines at the bottom of the file name Pipfile.
-	```bash
+        - Withinexisting Pipfile specify the version of Python being used, which is 3.7 . So,add these two lines at the bottom of the file name Pipfile.```bash
 		:~/Desktop/helloworld$ nano Pipfile
 	```
 	- Add these two lines in the bottom
 	
-	```
+	```bash
 		[requires]
 		python_version = "3.7"
 	```
