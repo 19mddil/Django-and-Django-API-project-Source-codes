@@ -100,8 +100,27 @@ The complete flow looks something like this:
 Every web framework needs a convenient way to generate HTML files.  
 In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )
 ## Heroku (Production publish)
-The following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
+Heroku works with the help of locat git repository. So Each project should have its own git initialization for now. 
+```bash
+	:~/Desktop/helloworld$git init
+	:~/Desktop/helloworld$git add . && git commit -m "gitted all the files"
+```
+Then the following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
 - update Pipfile.lock
+    - to update the Pipfile.lock two process must be followed
+        1.Withinexisting Pipfile specify the version of Python being used, which is 3.7 . So,add these two lines at the bottom of the file name Pipfile.
+	```bash
+		:~/Desktop/helloworld$ nano Pipfile
+	```
+	2.Add these two lines in the bottom
+	```
+		[requires]
+		python_version = "3.7"
+	```
+	then run this command:
+	```bash
+		:~/Desktop/helloworld$ pipenv lock
+	```
 - make a new Procfile file
 - install Gunicorn as our web server
 - make a one-line change to settings.py file
