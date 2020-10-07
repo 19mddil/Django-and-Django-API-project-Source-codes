@@ -14,11 +14,11 @@ Django uses the concept of projects and apps to keep code clean and readable. A 
 
 `:~/Desktop/folder-name-where-your-project-files-will-live$ pipenv shell`
 ### Stating Project
-`:~/Desktop/folder-name-where-your-project-files-will-live$ django-admin startproject porject-name_project .`
+`(folder-name-where-your-project-files-will-live):~/Desktop/folder-name-where-your-project-files-will-live$ django-admin startproject porject-name_project .`
 
 For example, a real-world Django e-commerce site might have one app for userauthentication, another app for payments, and a third app to power item listing details: each focuses on an isolated piece of functionality. That’s three distinct apps that all live within one top-level project.
 ### Starting an App and its files
-`:~/Desktop/folder-name-where-your-project-files-will-live$python3 manage.py startapp appName `
+`(folder-name-where-your-project-files-will-live):~/Desktop/folder-name-where-your-project-files-will-live$python3 manage.py startapp appName `
 
 An appName wise folder will be created and in it these files are found-
 - admin.py is a configuration file for the built-in Django Admin app
@@ -38,7 +38,7 @@ An appName wise folder will be created and in it these files are found-
 ```
 
 ```bash
-:~/Desktop/helloworld$ tree
+(helloworld):~/Desktop/helloworld$ tree
 ```
 ```bash
 ├── db.sqlite3
@@ -62,7 +62,7 @@ An appName wise folder will be created and in it these files are found-
 └── Pipfile.lock
 ```
 ### Things to do after creating an app
-open file in ` :~Desktop/helloworld/helloworld_project$ subl setting.py`
+open file in ` (helloworld):~Desktop/helloworld/helloworld_project$ subl setting.py`
 ```python
 # Application definition
 
@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',# Add this line
 ]
 ```
-new line definition is in `:~Desktop/helloworld/pages$subl apps.py `
+new line definition is in `(helloworld):~Desktop/helloworld/pages$subl apps.py `
 ```python
 from django.apps import AppConfig
 
@@ -100,13 +100,65 @@ The complete flow looks something like this:
 Every web framework needs a convenient way to generate HTML files.  
 In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )
 ## Heroku (Production publish)
+### Pre-Configurations
 The following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
-- update Pipfile.lock
-- make a new Procfile file
-- install Gunicorn as our web server
-- make a one-line change to settings.py file
-
-## Introducing the Django Admin
+#### update Pipfile.lock
+To update the Pipfile.lock these processes must be followed -  
+Withinexisting Pipfile specify the version of Python being used, which is 3.7 . So,add these two lines at the bottom of the file name Pipfile.
+```bash
+	(helloworld):~/Desktop/helloworld$ nano Pipfile
+```
+Add these two lines in the bottom
+```bash
+	[requires]
+	python_version = "3.7"
+```
+Then run this command:
+```bash
+	(helloworld):~/Desktop/helloworld$ pipenv lock
+```
+#### make a new Procfile file
+```bash
+	(helloworld):~/Desktop/helloworld$ touch Procfile
+	(helloworld):~/Desktop/helloworld$ nano Procfile
+```
+Then,add this line
+`web: gunicorn helloworld_project.wsgi --log-file -`
+#### install Gunicorn as web server
+```bash
+	(helloworld):~/Desktop/helloworld$ pipenv install gunicorn==19.9.0
+```
+#### make a one-line change to settings.py file
+```python
+	# pages_project/settings.py
+	ALLOWED_HOSTS = ['*']
+```
+#### Git and heroku
+Heroku works with the help of locat git repository. So Each project should have its own git initialization. 
+```bash
+	(helloworld):~/Desktop/helloworld$git init
+	(helloworld):~/Desktop/helloworld$git add . && git commit -m "gitted all the files for heroku deploy"
+```
+### Deployment Configurations
+The last step is to actually deploy with Heroku.
+#### create a new app on Heroku and add a git remote “hook” for Heroku
+The following command will give hook link and project link to visit later!
+```bash
+	(helloworld):~/Desktop/helloworld$ heroku create
+```
+#### configure the app to ignore static files(initially)
+```bash
+	(helloworld):~/Desktop/helloworld$ heroku config:set DISABLE_COLLECTSTATIC=1
+```
+#### push our code to it
+```bash
+	(helloworld):~/Desktop/helloworld$ git push heroku master
+```
+#### make our Heroku app live
+```bash
+	(helloworld):~/Desktop/helloworld$ heroku ps:scale web=1
+```
+## The Django Admin
 ### Philosophy 
 Generating admin sites for your staff or clients to add, change, and delete content is tedious work that doesn’t require much creativity. For that reason, Django entirely automates creation of admin interfaces for models. 
 
