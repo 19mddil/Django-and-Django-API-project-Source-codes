@@ -98,7 +98,8 @@ The complete flow looks something like this:
 ## Templates
 ### Philosophy
 Every web framework needs a convenient way to generate HTML files.  
-In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )
+In Django the approach is to use templates ( Templates:individual HTML files that can be linked together and also include basic logic. )  
+Also base template can be extended and overwritten like programming paradigm.Wonderful.
 ## Heroku (Production publish)
 ### Pre-Configurations
 The following four changes are needed to our Pages project so it’s ready to deploy online with Heroku:
