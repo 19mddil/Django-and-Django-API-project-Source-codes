@@ -158,6 +158,15 @@ The following command will give hook link and project link to visit later!
 ```bash
 	(helloworld):~/Desktop/helloworld$ heroku ps:scale web=1
 ```
+## Database
+### Django ORM (Object-Relational Mapper)
+Thanks to the powerful Django ORM (Object-Relational Mapper), there is built-in support for multiple database backends: PostgreSQL, MySQL, MariaDB, Oracle, or SQLite. This means that we, as developers, can write the same code in a models.py file and it will automatically be translated into each database correctly. The only configuration required is to update the DATABASES section of our settings.py file. This is truly an impressive feature!  
+we will start by using SQLite as our local database and later switch over to using PostgreSQL as our production database on Heroku.
+### The migrate command
+```bash
+$ python manage.py migrate
+```
+executing the migrate command creates an initial database based on Django’s default settings.If you look inside our directory with the ls command, you’ll see there’s now a db.sqlite3 file representing our SQLite database.
 ## The Django Admin
 ### Philosophy 
 Generating admin sites for your staff or clients to add, change, and delete content is tedious work that doesn’t require much creativity. For that reason, Django entirely automates creation of admin interfaces for models. 
