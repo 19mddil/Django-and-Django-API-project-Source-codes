@@ -18,5 +18,9 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/',include('django.contrib.auth.urls')), #set login and logout page at accounts/ 
+    #and this will use a defaul log in view known as LoginView
+    #this LoginView looks in templates/registration for template which in this case be login.html
     path('',include('blog.urls')),#new
+    path('accounts/',include('account.urls')),
 ]
