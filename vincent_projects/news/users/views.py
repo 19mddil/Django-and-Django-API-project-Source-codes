@@ -17,3 +17,16 @@ class LoginView(auth_views.LoginView):
 
 class PasswordChangeDoneView(auth_views.PasswordChangeDoneView):
 	template_name = 'users/registration/password_change_done.html'
+
+class PasswordResetView(auth_views.PasswordResetView):
+	template_name = 'users/registration/password_reset_form.html'
+	email_template_name = 'users/registration/password_reset_email.html'
+
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+	template_name = 'users/registration/password_reset_done.html'
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+	template_name = 'users/registration/password_reset_complete.html'
+
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+	template_name = 'users/registration/password_reset_confirm.html'
