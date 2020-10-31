@@ -126,9 +126,17 @@ USE_TZ = True
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+DEFAULT_FROM_EMAIL = 'mddilshadul98@19mddilshad.xyz'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
+# ideally you would store secure information like your password in
+# environment variables, not in plain text. But, to keep things simple, we won’t do that
+# here. However, in a proper production environment you should.
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
