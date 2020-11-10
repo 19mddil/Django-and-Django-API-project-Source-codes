@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',#new
     'pages.apps.PagesConfig',#new
+    'articles.apps.ArticlesConfig',#new
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' #new
@@ -115,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dhaka'
 
 USE_I18N = True
 

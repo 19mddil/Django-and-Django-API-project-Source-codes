@@ -3,13 +3,18 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-{% if user.is_authenticated %}
-	Hi {{ user.username }}!
-	<p><a href="{% url 'logout' %}" >Log Out</a> Or, <a href= "{% url 'password_change'%}">Change Password</a> Or, 
-	<a href="{% url 'password_reset' %}">Forgot Password</a></p>
-{% else %}
-	<p>You are not logged in</p>
-	<a href="{% url 'login' %}" >Log In</a>
-	<a href="{% url 'signup' %}" >Sign Up</a>
-{% endif %}
+	{% if user.is_authenticated %}
+		<div class="jumbotron">
+			<h1 class="display-4">Newspaper app</h1>
+			<p class="lead">Hi,{{ user.username }}.</p>
+			<p class="lead">A Newspaper website built with Django.</p>
+			<p class="lead">
+				<a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">View All Articles</a>
+			</p>
+		</div>
+	{% else %}
+		<p>You are not logged in</p>
+		<a href="{% url 'login' %}" >Log In</a>
+		<a href="{% url 'signup' %}" >Sign Up</a>
+	{% endif %}
 {% endblock content %}
