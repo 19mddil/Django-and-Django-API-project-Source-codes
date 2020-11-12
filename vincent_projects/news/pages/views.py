@@ -5,7 +5,7 @@ from django.contrib import messages
 class HomePageView(LoginRequiredMixin,TemplateView):
 	template_name = 'users/home.html'
 	login_url = 'login' #new
-	permission_denied_message = 'You have to be logged in to access that page'
+	permission_denied_message = 'You have to be logged in to access the home page and view articles.'
 
 	def dispatch(self, request):
 	    if not request.user.is_authenticated:
