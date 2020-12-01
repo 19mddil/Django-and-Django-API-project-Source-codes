@@ -18,7 +18,7 @@ But if that dont work,run following commands
 python3 -m venv venv
 source venv/bin/activate
 pip3 install pipenv
-cp ~/Desktop/Django_Framework-master//Django_Framework-master/requirements.txt .
+cp ~/Desktop/Django_Framework-master/Django_Framework-master/requirements.txt .
 pipenv install -r requirements.txt
 ```
 Now run
