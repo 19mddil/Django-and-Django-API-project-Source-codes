@@ -8,7 +8,12 @@ Then navigate any projects you prefer and see if there is manage.py in director 
 username@device-name:~/Desktop/Django_Framework-master/Django_Framework-master/demo_projects/news$ ls
 articles  db.sqlite3  manage.py  newspaper_project  pages  Pipfile  Pipfile.lock  Procfile  requirements.txt  users
 ```
-Now run following commands
+For some projects you can run only
+```bash
+python3 manage.py migrate
+python3 manage.py runserver
+```
+But if that dont work,run following commands
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -21,6 +26,8 @@ Now run
 python3 manage.py migrate
 python3 manage.py runerver
 ```
+
+
 Happy coding:).
 
 
