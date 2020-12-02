@@ -1,14 +1,3 @@
-# Projects
-## Notable REST API projects by me
-** (Medi_Project)JWT Token authentication multiple stakeholders like Doctor and Paitent authentication is same project**<https://github.com/19mddil/Django-and-Django-API-project-Source-codes/tree/master/api_projects/Medi_Project/jwt_authen_project/backend>   
-** (Medi_Project)django rest-auth Token authentication multiple stakeholders like Doctor and Paitent authentication is same project**<https://github.com/19mddil/Django-and-Django-API-project-Source-codes/tree/master/api_projects/Medi_Project/rest_auth_project/backend>  
-** (BloggerAPI) CRUD API project **<https://github.com/19mddil/Django-and-Django-API-project-Source-codes/tree/master/api_projects/blogapi>
-## Notable Django project  
-
-** (Newspaper) application with authorization,authentication,crud ** <https://github.com/19mddil/Django-and-Django-API-project-Source-codes/tree/master/demo_projects/news>
-
-
-
 # Running projects locally
 First clone the repo 
 ```bash
